@@ -1,0 +1,3 @@
+vivait_install_successful_homepage:
+    pattern:  /install
+    defaults: { _controller: VivaitInstallSuccessfulBundle:Default:index }

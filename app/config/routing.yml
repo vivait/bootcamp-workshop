@@ -1,0 +1,4 @@
+vivait_install_successful:
+    resource: "@VivaitInstallSuccessfulBundle/Resources/config/routing.yml"
+    prefix:   /test
+

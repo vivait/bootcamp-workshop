@@ -1,0 +1,7 @@
+parameters:
+#    vivait_install_successful.example.class: Vivait\InstallSuccessfulBundle\Example
+
+services:
+#    vivait_install_successful.example:
+#        class: %vivait_install_successful.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
