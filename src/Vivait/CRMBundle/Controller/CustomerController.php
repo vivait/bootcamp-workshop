@@ -5,6 +5,7 @@ namespace Vivait\CRMBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Vivait\CRMBundle\Entity\Customer;
+use Vivait\CRMBundle\Form\Type\CustomerType;
 
 class CustomerController extends Controller
 {
@@ -35,13 +36,7 @@ class CustomerController extends Controller
         }
 
 
-        //Full way
-        //$form = $this->container->get('form.factory')->createBuilder('form', $customer, []);
-        $form = $this->createFormBuilder($customer)
-            ->add('forename', 'text')
-            ->add('surname', 'text')
-            ->add('dob', 'date',['label'=>'Date of Birth','input_wrapper_class'=>null,'separator_wrapper_class'=>null,'widget'=>'single_text'])
-            ->getForm();
+        $form = $this->createForm(new CustomerType(),$customer);
 
         $form->handleRequest($request);
         if ($form->isValid()) {
