@@ -20,7 +20,7 @@
     },
     "require": {
         "php": ">=5.4.0",
-        "symfony/symfony": "~2.4",
+        "symfony/symfony": "2.4.4",
         "doctrine/orm": "~2.2,>=2.2.3",
         "doctrine/doctrine-bundle": "~1.2",
         "doctrine/migrations": "dev-master",
@@ -38,6 +38,8 @@
         "twbs/bootstrap": "v3.0.0",
         "leafo/lessphp": "dev-master#85bd4557920d5f4fcbf41beb621e91b842e3621b",
         "vivait/bootstrap-bundle": "1.1.x-dev",
+        "vivait/resolve-entity-bundle": "dev-master",
+        "vivait/common": "1.1.x-dev",
         "symfony/intl": "*",
         "knplabs/knp-menu-bundle": "dev-master",
         "knplabs/knp-menu": "dev-master",
@@ -95,6 +97,11 @@
         {
             "type": "composer",
             "url": "http://repos.vivait.co.uk"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/vivait/MopaBootstrapBundle.git"
         }
+
     ]
 }

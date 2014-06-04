@@ -4,7 +4,7 @@ parameters:
     database_port:     ~
     database_name:     vivait-bootcamp
     database_user:     vivait-bootcamp
-    database_password: codeigniter-is-not-a-framework-its-an-atrocity
+    database_password: vivait-bootcamp
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
@@ -13,3 +13,5 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    assetic_debug:     false

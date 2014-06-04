@@ -1,13 +1,38 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+{% extends 'VivaitBootstrapBundle:Default:base.html.twig' %}
+{% from 'VivaitBootstrapBundle:Default:flash.html.twig' import session_flash %}
+
+{% block title %}
+    Viva IT Saturday Symfony Workshop
+{% endblock %}
+
+{% block navbar %}
+{% endblock navbar %}
+
+{% block head_style %}
+    {{ parent() }}
+{% endblock head_style %}
+
+
+{% block head_bottom %}
+{% endblock head_bottom %}
+
+{% block container_div_start %}
+<div class="page-wrap">
+    {{ parent() }}
+    {% endblock container_div_start %}
+
+    {% block content_div_end %}
+    {{ parent() }}
+</div>
+{% endblock content_div_end %}
+
+
+{% block body_end %}
+    {{ parent() }}
+{% endblock %}
+
+
+{% block foot_script %}
+    {{ parent() }}
+
+{% endblock foot_script %}
