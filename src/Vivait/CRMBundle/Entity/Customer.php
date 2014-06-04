@@ -50,7 +50,11 @@ class Customer
 
     /**
      * @var Address[]|ArrayCollection
-     * @ORM\OneToMany(targetEntity="Address", mappedBy="customer")
+     * Remember:
+     *  orphanRemoval=true is needed when deleting addresses from a customer
+     *  cascade:persist is needed to create new addresses against a customer
+     *  cascade:remove is to delete all addresses from a customer when you delete the customer
+     * @ORM\OneToMany(targetEntity="Address", mappedBy="customer",cascade={"persist","remove"},orphanRemoval=true)
      */
     private $addresses;
 
@@ -142,22 +146,29 @@ class Customer
     /**
      * Add addresses
      *
-     * @param Customer $addresses
-     * @return Customer
+     * @param Address $addresses
+     * @return Address
      */
-    public function addAddress(Customer $addresses)
+    public function addAddress(Address $addresses)
     {
         $this->addresses[] = $addresses;
 
+        #this ensures that the customer has been set on the address (this is important as Doctrine
+        #will only check the 'owning' entity of a relationship for changes, if you leave this off
+        #doctrine would create an Address without a Customer which will result in a broken link
+        #The 'owner' of the relationship is always the one where the actual ID of the relationship
+        #is stored in the database (Always the "Many" part on a OneToMany relationship but can be
+        #manually specified in a OneToOne or ManyToMany)
+        $addresses->setCustomer($this);
         return $this;
     }
 
     /**
      * Remove addresses
      *
-     * @param \Vivait\CRMBundle\Entity\Customer $addresses
+     * @param \Vivait\CRMBundle\Entity\Address $addresses
      */
-    public function removeAddress(Customer $addresses)
+    public function removeAddress(Address $addresses)
     {
         $this->addresses->removeElement($addresses);
     }

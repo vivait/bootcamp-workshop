@@ -9,6 +9,7 @@
             <tr>
                 <th>Name</th>
                 <th>DOB</th>
+                <th>Addresses</th>
                 <th>Action</th>
             </tr>
             {% for customer in customers %}
@@ -17,6 +18,19 @@
                         <a href="{{ path('vivait_crm_customer_edit',{'customer':customer.id}) }}">{{ customer.name }}</a>
                     </td>
                     <td>{% if customer.dob %}{{ customer.dob|date('d/m/Y') }}{% endif %}</td>
+                    <td>
+                        <ul>
+                            {% for address in customer.addresses %}
+                                <li>
+                                    {{ address.line1 }}<br />
+                                    {{ address.line2 }}<br />
+                                    {{ address.town }}<br />
+                                    {{ address.county }}<br />
+                                    {{ address.postcode }}<br />
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </td>
                     <td><a class="btn btn-danger btn-sm" href="{{ path('vivait_crm_customer_delete',{'customer':customer.id}) }}">Delete</a></td>
                 </tr>
             {% else %}

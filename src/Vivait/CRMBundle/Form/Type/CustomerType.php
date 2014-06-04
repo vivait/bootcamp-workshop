@@ -23,7 +23,16 @@ class CustomerType extends AbstractType {
         return $builder
             ->add('forename', 'text')
             ->add('surname', 'text')
-            ->add('dob', 'date',['label'=>'Date of Birth','input_wrapper_class'=>null,'separator_wrapper_class'=>null,'widget'=>'single_text']);
+            ->add('dob', 'date',['label'=>'Date of Birth','input_wrapper_class'=>null,'separator_wrapper_class'=>null,'widget'=>'single_text'])
+            ->add('addresses','collection',[
+                    'type'=>new AddressType(),
+                    'allow_add'=>true,
+                    'allow_delete'=>true,
+                    'by_reference'=>false,
+                    'options'=>[
+                        'label_render'=>false
+                    ]
+                ]);
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
