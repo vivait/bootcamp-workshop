@@ -1,2 +1,20 @@
 <h1>Customer List</h1>
 <a href="{{ path('vivait_crm_homepage') }}">CRM Home</a>
+<a href="{{ path('vivait_crm_customer_add') }}">Add Customer</a>
+
+<table>
+    <tr>
+        <th>Forename</th>
+        <th>Surname</th>
+    </tr>
+    {% for customer in customers %}
+    <tr>
+        <td>{{ customer.forename }}</td>
+        <td>{{ customer.surname }}</td>
+    </tr>
+    {% else %}
+        <tr>
+            <td colspan="2">No Records</td>
+        </tr>
+    {% endfor %}
+</table>

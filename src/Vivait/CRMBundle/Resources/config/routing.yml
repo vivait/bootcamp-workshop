@@ -5,3 +5,7 @@ vivait_crm_homepage:
 vivait_crm_customer_list:
     pattern:  /customers
     defaults: { _controller: VivaitCRMBundle:Customer:list }
+
+vivait_crm_customer_add:
+    pattern:  /customers/add
+    defaults: { _controller: VivaitCRMBundle:Customer:add }
