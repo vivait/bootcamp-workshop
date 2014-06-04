@@ -40,6 +40,7 @@ class CustomerController extends Controller
         $form = $this->createFormBuilder($customer)
             ->add('forename', 'text')
             ->add('surname', 'text')
+            ->add('dob', 'date',['label'=>'Date of Birth','input_wrapper_class'=>null,'separator_wrapper_class'=>null,'widget'=>'single_text'])
             ->getForm();
 
         $form->handleRequest($request);

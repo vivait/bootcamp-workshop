@@ -38,6 +38,14 @@ class Customer
      */
     private $surname;
 
+    /**
+     * @var \DateTime
+     * @Assert\Date()
+     * @Assert\NotBlank()
+     * @ORM\Column(name="dob", type="date", nullable=true)
+     */
+    private $dob;
+
 
     /**
      * Get id
@@ -98,4 +106,22 @@ class Customer
     public function getName() {
         return sprintf("%s %s",$this->forename,$this->surname);
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDob()
+    {
+        return $this->dob;
+    }
+
+    /**
+     * @param \DateTime $dob
+     */
+    public function setDob($dob)
+    {
+        $this->dob = $dob;
+    }
+
+
 }
