@@ -50,7 +50,7 @@ class Customer
 
     /**
      * @var Address[]|ArrayCollection
-     * @ORM\OneToMany(targetEntity="Customer", mappedBy="customer")
+     * @ORM\OneToMany(targetEntity="Address", mappedBy="customer")
      */
     private $addresses;
 
