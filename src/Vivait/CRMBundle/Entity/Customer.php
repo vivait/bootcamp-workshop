@@ -2,6 +2,7 @@
 
 namespace Vivait\CRMBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -46,6 +47,12 @@ class Customer
      */
     private $dob;
 
+
+    /**
+     * @var Address[]|ArrayCollection
+     * @ORM\OneToMany(targetEntity="Customer", mappedBy="customer")
+     */
+    private $addresses;
 
     /**
      * Get id
@@ -124,4 +131,44 @@ class Customer
     }
 
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->addresses = new ArrayCollection();
+    }
+
+    /**
+     * Add addresses
+     *
+     * @param Customer $addresses
+     * @return Customer
+     */
+    public function addAddress(Customer $addresses)
+    {
+        $this->addresses[] = $addresses;
+
+        return $this;
+    }
+
+    /**
+     * Remove addresses
+     *
+     * @param \Vivait\CRMBundle\Entity\Customer $addresses
+     */
+    public function removeAddress(Customer $addresses)
+    {
+        $this->addresses->removeElement($addresses);
+    }
+
+    /**
+     * Get addresses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAddresses()
+    {
+        return $this->addresses;
+    }
 }
