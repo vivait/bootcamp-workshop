@@ -60,4 +60,16 @@ class CustomerController extends Controller
 
 
     }
+
+    public function deleteAction(Request $request, $customer) {
+        $em = $this->getDoctrine()->getManager();
+        $customer = $em->getRepository('VivaitCRMBundle:Customer')
+            ->find($customer);
+
+        $em->remove($customer);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('vivait_crm_customer_list'));
+
+    }
 }

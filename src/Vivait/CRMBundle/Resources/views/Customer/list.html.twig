@@ -6,15 +6,17 @@
     <tr>
         <th>Forename</th>
         <th>Surname</th>
+        <th>Action</th>
     </tr>
     {% for customer in customers %}
     <tr>
         <td><a href="{{ path('vivait_crm_customer_edit',{'customer':customer.id}) }}">{{ customer.forename }}</a></td>
         <td>{{ customer.surname }}</td>
+        <td><a href="{{ path('vivait_crm_customer_delete',{'customer':customer.id}) }}">Delete</a></td>
     </tr>
     {% else %}
         <tr>
-            <td colspan="2">No Records</td>
+            <td colspan="3">No Records</td>
         </tr>
     {% endfor %}
 </table>
