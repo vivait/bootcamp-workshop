@@ -1,3 +1,7 @@
 vivait_crm_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: VivaitCRMBundle:Default:index }
+    pattern:  /
+    defaults: { _controller: VivaitCRMBundle:Home:index }
+
+vivait_crm_customer_list:
+    pattern:  /customers
+    defaults: { _controller: VivaitCRMBundle:Customer:list }
