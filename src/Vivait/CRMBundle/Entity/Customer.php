@@ -3,6 +3,7 @@
 namespace Vivait\CRMBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Customer
@@ -23,14 +24,16 @@ class Customer
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
+     * @Assert\Length(min="3",max="255")
      * @ORM\Column(name="forename", type="string", length=255)
      */
     private $forename;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
+     * @Assert\Length(min="3",max="255")
      * @ORM\Column(name="surname", type="string", length=255)
      */
     private $surname;
@@ -39,7 +42,7 @@ class Customer
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -54,7 +57,7 @@ class Customer
      */
     public function setForename($forename)
     {
-        $this->forename = $forename;
+        $this->forename = ucfirst($forename);
 
         return $this;
     }
@@ -77,7 +80,7 @@ class Customer
      */
     public function setSurname($surname)
     {
-        $this->surname = $surname;
+        $this->surname = ucfirst($surname);
 
         return $this;
     }
@@ -90,5 +93,9 @@ class Customer
     public function getSurname()
     {
         return $this->surname;
+    }
+
+    public function getName() {
+        return sprintf("%s %s",$this->forename,$this->surname);
     }
 }

@@ -7,21 +7,19 @@
     {% block section %}
         <table class="table table-bordered table-striped">
             <tr>
-                <th>Forename</th>
-                <th>Surname</th>
+                <th>Name</th>
                 <th>Action</th>
             </tr>
             {% for customer in customers %}
                 <tr>
                     <td>
-                        <a href="{{ path('vivait_crm_customer_edit',{'customer':customer.id}) }}">{{ customer.forename }}</a>
+                        <a href="{{ path('vivait_crm_customer_edit',{'customer':customer.id}) }}">{{ customer.name }}</a>
                     </td>
-                    <td>{{ customer.surname }}</td>
                     <td><a class="btn btn-danger btn-sm" href="{{ path('vivait_crm_customer_delete',{'customer':customer.id}) }}">Delete</a></td>
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="3">No Records</td>
+                    <td colspan="2">No Records</td>
                 </tr>
             {% endfor %}
         </table>
