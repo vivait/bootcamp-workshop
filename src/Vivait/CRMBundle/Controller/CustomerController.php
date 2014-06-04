@@ -40,7 +40,6 @@ class CustomerController extends Controller
         $form = $this->createFormBuilder($customer)
             ->add('forename', 'text')
             ->add('surname', 'text')
-            ->add('submit', 'submit')
             ->getForm();
 
         $form->handleRequest($request);
@@ -52,16 +51,20 @@ class CustomerController extends Controller
         }
 
         return $this->render(
-            'VivaitCRMBundle:Customer:form.html.twig',
+            '@VivaitBootstrap/Default/form.html.twig',
             [
-                'form' => $form->createView()
+                'form' => [
+                    'form' => $form->createView(),
+                    'title' => 'Add/Edit Customer'
+                ]
             ]
         );
 
 
     }
 
-    public function deleteAction(Request $request, $customer) {
+    public function deleteAction(Request $request, $customer)
+    {
         $em = $this->getDoctrine()->getManager();
         $customer = $em->getRepository('VivaitCRMBundle:Customer')
             ->find($customer);

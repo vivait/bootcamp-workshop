@@ -1,2 +1,5 @@
-<h1>CRM Home</h1>
+{% extends('::base.html.twig') %}
+{% block sectiontitle %}CRM Home{% endblock %}
+{% block section %}
 <a href="{{ path('vivait_crm_customer_list') }}">Customer List</a>
+{% endblock %}
