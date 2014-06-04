@@ -9,3 +9,7 @@ vivait_crm_customer_list:
 vivait_crm_customer_add:
     pattern:  /customers/add
     defaults: { _controller: VivaitCRMBundle:Customer:add }
+
+vivait_crm_customer_edit:
+    pattern:  /customers/edit/{customer}
+    defaults: { _controller: VivaitCRMBundle:Customer:add }

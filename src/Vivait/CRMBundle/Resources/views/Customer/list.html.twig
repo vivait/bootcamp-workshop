@@ -9,7 +9,7 @@
     </tr>
     {% for customer in customers %}
     <tr>
-        <td>{{ customer.forename }}</td>
+        <td><a href="{{ path('vivait_crm_customer_edit',{'customer':customer.id}) }}">{{ customer.forename }}</a></td>
         <td>{{ customer.surname }}</td>
     </tr>
     {% else %}

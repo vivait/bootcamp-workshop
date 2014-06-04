@@ -22,9 +22,19 @@ class CustomerController extends Controller
         );
     }
 
-    public function addAction(Request $request)
+    public function addAction(Request $request, $customer = null)
     {
-        $customer = new Customer();
+        $em = $this->getDoctrine()->getManager();
+
+
+        if (!$customer) {
+            $customer = new Customer();
+        } else {
+            $customer = $em->getRepository('VivaitCRMBundle:Customer')
+                ->find($customer);
+        }
+
+
         //Full way
         //$form = $this->container->get('form.factory')->createBuilder('form', $customer, []);
         $form = $this->createFormBuilder($customer)
@@ -34,10 +44,10 @@ class CustomerController extends Controller
             ->getForm();
 
         $form->handleRequest($request);
-        if($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+        if ($form->isValid()) {
             $em->persist($customer);
             $em->flush();
+
             return $this->redirect($this->generateUrl('vivait_crm_customer_list'));
         }
 
