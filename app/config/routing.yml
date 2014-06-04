@@ -1,3 +1,7 @@
+vivait_crm:
+    resource: "@VivaitCRMBundle/Resources/config/routing.yml"
+    prefix:   /
+
 vivait_install_successful:
     resource: "@VivaitInstallSuccessfulBundle/Resources/config/routing.yml"
     prefix:   /test

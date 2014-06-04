@@ -1,0 +1,7 @@
+parameters:
+#    vivait_crm.example.class: Vivait\CRMBundle\Example
+
+services:
+#    vivait_crm.example:
+#        class: %vivait_crm.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

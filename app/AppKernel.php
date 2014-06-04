@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Vivait\CRMBundle\VivaitCRMBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
