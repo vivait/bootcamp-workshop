@@ -9,6 +9,9 @@ use Vivait\CRMBundle\Form\Type\CustomerType;
 
 class CustomerController extends Controller
 {
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function listAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -23,23 +26,30 @@ class CustomerController extends Controller
         );
     }
 
-    public function addAction(Request $request, $customer = null)
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function addAction() {
+        $customer = new Customer();
+        return $this->forward('VivaitCRMBundle:Customer:edit', [
+                'customer'  => $customer
+            ]);
+
+    }
+
+
+    /**
+     * @param Request $request
+     * @param Customer $customer
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function editAction(Request $request, Customer $customer)
     {
-        $em = $this->getDoctrine()->getManager();
-
-
-        if (!$customer) {
-            $customer = new Customer();
-        } else {
-            $customer = $em->getRepository('VivaitCRMBundle:Customer')
-                ->find($customer);
-        }
-
-
         $form = $this->createForm(new CustomerType(),$customer);
 
         $form->handleRequest($request);
         if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
             $em->persist($customer);
             $em->flush();
 
@@ -59,12 +69,13 @@ class CustomerController extends Controller
 
     }
 
-    public function deleteAction(Request $request, $customer)
+    /**
+     * @param Customer $customer
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function deleteAction(Customer $customer)
     {
         $em = $this->getDoctrine()->getManager();
-        $customer = $em->getRepository('VivaitCRMBundle:Customer')
-            ->find($customer);
-
         $em->remove($customer);
         $em->flush();
 

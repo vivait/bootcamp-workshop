@@ -12,7 +12,7 @@ vivait_crm_customer_add:
 
 vivait_crm_customer_edit:
     pattern:  /customers/edit/{customer}
-    defaults: { _controller: VivaitCRMBundle:Customer:add }
+    defaults: { _controller: VivaitCRMBundle:Customer:edit }
 
 vivait_crm_customer_delete:
     pattern:  /customers/delete/{customer}
