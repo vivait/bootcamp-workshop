@@ -20,4 +20,14 @@ class CustomerRepository extends EntityRepository
             ->getQuery()
             ->getResult();
     }
+
+
+    public function listAllOrderBySurname() {
+        return $this->createQueryBuilder('c')
+            ->addSelect('a')
+            ->leftJoin('c.addresses','a')
+            ->orderBy('c.surname')
+            ->getQuery()
+            ->getResult();
+    }
 }
