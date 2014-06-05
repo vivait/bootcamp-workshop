@@ -9,6 +9,7 @@
             <tr>
                 <th>Name</th>
                 <th>DOB</th>
+                <th>Email</th>
                 <th>Addresses</th>
                 <th>Action</th>
             </tr>
@@ -18,6 +19,7 @@
                         <a href="{{ path('vivait_crm_customer_edit',{'customer':customer.id}) }}">{{ customer.name }}</a>
                     </td>
                     <td>{% if customer.dob %}{{ customer.dob|date('d/m/Y') }}{% endif %}</td>
+                    <td>{{ customer.email }}</td>
                     <td>
                         <ul>
                             {% for address in customer.addresses %}

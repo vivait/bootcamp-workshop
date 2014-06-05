@@ -47,6 +47,14 @@ class Customer
      */
     private $dob;
 
+    /**
+     * @var string
+     * @Assert\Email()
+     * @Assert\NotBlank()
+     * @ORM\Column(name="email", type="string", length=255, nullable=true)
+     */
+    private $email;
+
 
     /**
      * @var Address[]|ArrayCollection
@@ -182,4 +190,22 @@ class Customer
     {
         return $this->addresses;
     }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+
 }

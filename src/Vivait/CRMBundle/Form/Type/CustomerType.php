@@ -23,6 +23,7 @@ class CustomerType extends AbstractType {
         return $builder
             ->add('forename', 'text')
             ->add('surname', 'text')
+            ->add('email', 'text')
             ->add('dob', 'date',['label'=>'Date of Birth','input_wrapper_class'=>null,'separator_wrapper_class'=>null,'widget'=>'single_text'])
             ->add('addresses','collection',[
                     'type'=>'address',
