@@ -1,11 +1,30 @@
 <?php
 namespace Vivait\EmailBundle\Model;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 class Email {
 
+    /**
+     * @var string
+     * @Assert\NotBlank()
+     * @Assert\Length(min="3",max="255")
+     * @Assert\Email()
+     */
     private $from;
+
+    /**
+     * @var string
+     * @Assert\NotBlank()
+     * @Assert\Length(min="3",max="255")
+     * @Assert\Email()
+     */
     private $to;
+
+    /**
+     * @var string
+     * @Assert\NotBlank()
+     */
     private $message;
 
     /**

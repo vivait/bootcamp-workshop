@@ -5,3 +5,9 @@ services:
     vivait_email.mailer:
         class: Vivait\EmailBundle\Service\EmailService
         arguments: [@swiftmailer.mailer]
+
+    vivait_email.form.type.email:
+        class: Vivait\EmailBundle\Form\Type\EmailType
+        arguments: []
+        tags:
+            - { name: form.type, alias: 'email' }
