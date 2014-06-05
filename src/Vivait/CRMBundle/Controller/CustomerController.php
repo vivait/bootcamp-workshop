@@ -5,7 +5,6 @@ namespace Vivait\CRMBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Vivait\CRMBundle\Entity\Customer;
-use Vivait\CRMBundle\Form\Type\CustomerType;
 use Vivait\EmailBundle\Model\Email;
 
 class CustomerController extends Controller
