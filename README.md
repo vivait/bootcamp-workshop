@@ -60,8 +60,8 @@ We have configured the virtual machine to only use 512MB RAM so should be suitab
 CONFIGURE PHPSTORM
 ==================
 Great so you now have your virtualised box up and running, now you need to create a new project in PHPStorm, you can do this very easily
-by selecting "Create Project from Source Files" and point PHPStorm to the source files that are located in the 'www' subdirectory of the 
-workshop material you downloaded and extracted.
+by selecting "__New Project from Existing Files__" and select the "Web Server is installed locally option" and point PHPStorm to the source 
+files that are located in the 'www' subdirectory of the workshop material you downloaded and extracted.
 
 To speed things along you should also install the 'Symfony2 Plugin' in PHPStorm, you can do this by going into the preferences of PHPStorm,
 clicking on plug-ins in the left hand menu click on 'Browse Repositories' and search for Symfony2. (Highly Recommended)
