@@ -53,7 +53,7 @@ folder called "Symfony Workshop" with a vagrantfile (and some other stuff in it)
 5. You should see a lot of green text and ultimately our logo at the end of it with a link
 6. Test your Symfony installation by visiting: http://127.0.0.1:8080/test/install (you should get a congrats welcome page)
 
-To 'turn off' the virtual machine you type "vagrant down", when you run "vagrant up" again at the workshop it should only take a few minutes
+To 'turn off' the virtual machine you type "vagrant halt", when you run "vagrant up" again at the workshop it should only take a few minutes
 
 We have configured the virtual machine to only use 512MB RAM so should be suitable for low-spec machines.
 
