@@ -12,4 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class CustomerRepository extends EntityRepository
 {
+    public function listAll()
+    {
+        return $this->createQueryBuilder('c')
+            ->addSelect('a')
+            ->leftJoin('c.addresses','a')
+            ->getQuery()
+            ->getResult();
+    }
 }

@@ -16,7 +16,7 @@ class CustomerController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $customers = $em->getRepository('VivaitCRMBundle:Customer')
-            ->findAll();
+            ->listAll();
 
         return $this->render(
             'VivaitCRMBundle:Customer:list.html.twig',
