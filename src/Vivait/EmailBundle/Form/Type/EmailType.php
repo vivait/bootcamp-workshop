@@ -7,7 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class EmailType extends AbstractType {
+class EmailType extends AbstractType
+{
     /**
      * Returns the name of this type.
      *
@@ -15,7 +16,7 @@ class EmailType extends AbstractType {
      */
     public function getName()
     {
-        return 'email';
+        return 'vivait_email';
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -23,14 +24,24 @@ class EmailType extends AbstractType {
         return $builder
             ->add('from', 'text')
             ->add('to', 'text')
-            ->add('message', 'text');
+            ->add(
+                'message',
+                'textarea',
+                [
+                    'attr' => [
+                        'rows' => 10
+                    ]
+                ]
+            );
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults([
-                'data_class'=>'\Vivait\EmailBundle\Model\Email',
-            ]);
+        $resolver->setDefaults(
+            [
+                'data_class' => '\Vivait\EmailBundle\Model\Email',
+            ]
+        );
     }
 
 

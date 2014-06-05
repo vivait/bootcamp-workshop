@@ -17,3 +17,7 @@ vivait_crm_customer_edit:
 vivait_crm_customer_delete:
     pattern:  /customers/delete/{customer}
     defaults: { _controller: VivaitCRMBundle:Customer:delete }
+
+vivait_crm_customer_email:
+    pattern:  /customers/email/{customer}
+    defaults: { _controller: VivaitCRMBundle:Customer:email }

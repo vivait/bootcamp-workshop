@@ -19,7 +19,7 @@
                         <a href="{{ path('vivait_crm_customer_edit',{'customer':customer.id}) }}">{{ customer.name }}</a>
                     </td>
                     <td>{% if customer.dob %}{{ customer.dob|date('d/m/Y') }}{% endif %}</td>
-                    <td>{{ customer.email }}</td>
+                    <td><a href="{{ path('vivait_crm_customer_email',{'customer':customer.id}) }}">{{ customer.email }}</a></td>
                     <td>
                         <ul>
                             {% for address in customer.addresses %}

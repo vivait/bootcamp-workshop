@@ -10,4 +10,4 @@ services:
         class: Vivait\EmailBundle\Form\Type\EmailType
         arguments: []
         tags:
-            - { name: form.type, alias: 'email' }
+            - { name: form.type, alias: 'vivait_email' }
