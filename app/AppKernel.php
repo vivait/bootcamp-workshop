@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Vivait\CRMBundle\VivaitCRMBundle(),
+            new Vivait\EmailBundle\VivaitEmailBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

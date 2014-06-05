@@ -1,3 +1,7 @@
+vivait_email:
+    resource: "@VivaitEmailBundle/Resources/config/routing.yml"
+    prefix:   /
+
 vivait_crm:
     resource: "@VivaitCRMBundle/Resources/config/routing.yml"
     prefix:   /
