@@ -99,8 +99,13 @@ class CustomerController extends Controller
         $form->handleRequest($request);
         if ($form->isValid()) {
             $mailer = $this->get('vivait_email.mailer');
-            $mailer->sendEmail($email);
-            //return $this->redirect($this->generateUrl('vivait_crm_customer_list'));
+            try {
+                $mailer->sendEmail($email);
+                $this->get('session')->getFlashBag()->add('success','Message was sent successfully');
+            } catch(\Exception $e) {
+                $this->get('session')->getFlashBag()->add('error',$e->getMessage());
+            }
+            return $this->redirect($this->generateUrl('vivait_crm_customer_list'));
         }
 
         return $this->render(
