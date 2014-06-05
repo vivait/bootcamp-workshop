@@ -12,11 +12,11 @@ The EAP (Early Access Program) is recommended as it has a lot of useful tools, a
 version or an older version you may still be ok. If you are considering developing PHP then this is the gold standard of IDE
 in our opinion. Symfony also hooks into this with plug-ins and makes it a very, very useful tool.
 
-PHPStorm is commercial software, there is a trial available, it is also very reasonably priced.
-http://www.jetbrains.com/phpstorm/download/
+    * PHPStorm is commercial software, there is a trial available, it is also very reasonably priced.
+    http://www.jetbrains.com/phpstorm/download/
 
-EAP (Recommended)
-http://confluence.jetbrains.com/display/PhpStorm/PhpStorm+Early+Access+Program
+    * EAP (Recommended)
+    http://confluence.jetbrains.com/display/PhpStorm/PhpStorm+Early+Access+Program
 
 
 * Vagrant
@@ -42,16 +42,16 @@ http://www.vivait.co.uk/Bootcamp-1.zip
 
 INSTALLATION (Important)
 ========================
-Ultra Important Note: You must do this before you arrive, the basebox will download an entire virtual machine and is very large
-we will have some serious WiFi issues if everyone does this on the day. Please, please perform the following steps before the day
+__Ultra Important Note: You must do this before you arrive, the basebox will download an entire virtual machine and is very large
+we will have some serious WiFi issues if everyone does this on the day. Please, please perform the following steps before the day__
 
-1) Download and install the tools mentioned in the 'tools required' section above
-2) Download the workshop material zip file to a directory onto your computer and extract, i.e. onto your desktop so you have a 
+1. Download and install the tools mentioned in the 'tools required' section above
+2. Download the workshop material zip file to a directory onto your computer and extract, i.e. onto your desktop so you have a 
 folder called "Symfony Workshop" with a vagrantfile (and some other stuff in it)
-3) Open a terminal (CMD in Windows or Terminal on OSX) and navigate to this directory
-4) Type "vagrant up" and hit enter. This will start the download and build script, this can take approx 30 minutes to an hour to complete
-5) You should see a lot of green text and ultimately our logo at the end of it with a link
-6) Test your Symfony installation by visiting: http://127.0.0.1:8080/test/install (you should get a congrats welcome page)
+3. Open a terminal (CMD in Windows or Terminal on OSX) and navigate to this directory
+4. Type "vagrant up" and hit enter. This will start the download and build script, this can take approx 30 minutes to an hour to complete
+5. You should see a lot of green text and ultimately our logo at the end of it with a link
+6. Test your Symfony installation by visiting: http://127.0.0.1:8080/test/install (you should get a congrats welcome page)
 
 To 'turn off' the virtual machine you type "vagrant down", when you run "vagrant up" again at the workshop it should only take a few minutes
 
