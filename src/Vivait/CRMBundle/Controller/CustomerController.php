@@ -45,7 +45,7 @@ class CustomerController extends Controller
      */
     public function editAction(Request $request, Customer $customer)
     {
-        $form = $this->createForm(new CustomerType(),$customer);
+        $form = $this->createForm('customer',$customer);
 
         $form->handleRequest($request);
         if ($form->isValid()) {

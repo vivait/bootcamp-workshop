@@ -25,7 +25,7 @@ class CustomerType extends AbstractType {
             ->add('surname', 'text')
             ->add('dob', 'date',['label'=>'Date of Birth','input_wrapper_class'=>null,'separator_wrapper_class'=>null,'widget'=>'single_text'])
             ->add('addresses','collection',[
-                    'type'=>new AddressType(),
+                    'type'=>'address',
                     'allow_add'=>true,
                     'allow_delete'=>true,
                     'by_reference'=>false,

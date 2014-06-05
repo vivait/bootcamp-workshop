@@ -2,6 +2,14 @@ parameters:
 #    vivait_crm.example.class: Vivait\CRMBundle\Example
 
 services:
-#    vivait_crm.example:
-#        class: %vivait_crm.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    vivait_crm.form.type.customer:
+        class: Vivait\CRMBundle\Form\Type\CustomerType
+        arguments: []
+        tags:
+            - { name: form.type, alias: 'customer' }
+
+    vivait_crm.form.type.address:
+        class: Vivait\CRMBundle\Form\Type\AddressType
+        arguments: []
+        tags:
+            - { name: form.type, alias: 'address' }
