@@ -1,8 +1,7 @@
 Bootcamp Workshop
 =================
 
-Cool, so you're coming along to our Saturday Workshop (7th June). For you to have the best experience we have a 'recommended'
-platform, well actually more of a 'highly recommended' platform.
+For you to have the best experience we have a 'recommended' platform, well actually more of a 'highly recommended' platform.
 
 TOOLS REQUIRED
 ==============
@@ -42,8 +41,7 @@ http://www.vivait.co.uk/Bootcamp-1.zip
 
 INSTALLATION (Important)
 ========================
-__Ultra Important Note: You must do this before you arrive, the basebox will download an entire virtual machine and is very large
-we will have some serious WiFi issues if everyone does this on the day. Please, please perform the following steps before the day__
+__Ultra Important Note: You must perform these steps before you arrive, the basebox will download an entire virtual machine and is very large. We will have some serious WiFi issues if everyone does this on the day. Please, please perform the following steps before the day__
 
 1. Download and install the tools mentioned in the 'tools required' section above
 2. Download the workshop material zip file to a directory onto your computer and extract, i.e. onto your desktop so you have a 
@@ -66,14 +64,4 @@ files that are located in the 'www' subdirectory of the workshop material you do
 To speed things along you should also install the 'Symfony2 Plugin' in PHPStorm, you can do this by going into the preferences of PHPStorm,
 clicking on plug-ins in the left hand menu click on 'Browse Repositories' and search for Symfony2. (Highly Recommended)
  
-We also recommend you install the "PHP Annotation" plugin.
- 
 Hopefully PHPStorm should automatically detect that you are using a Symfony framework and ask you to confirm this.
- 
-I NEED HELP
-===========
-We have a open chatroom, hopefully you can help each other (go on), but we will be there as much as we can.
-https://www.hipchat.com/goBC0EASM
-
-See you Saturday, doors open at 9AM, Presentation starts at 10AM we would really hope that everyone is 'vagrant up' and
-PHPStorm open and ready by 10AM
